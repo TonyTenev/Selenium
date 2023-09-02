@@ -1,4 +1,4 @@
-package com.test.bank.tests;
+package com.test.opencart.test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 
-public class BankTestBase {
+public class OpenCartTestBase {
     public WebDriver driver;
     @BeforeMethod
     public void setup(){
@@ -16,12 +16,10 @@ public class BankTestBase {
         driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+        driver.get("https://demo.opencart.com/admin/index.php?route=common/login");
     }
-
     @AfterMethod
     public void tearDown(){
         driver.quit();
     }
-
 }
