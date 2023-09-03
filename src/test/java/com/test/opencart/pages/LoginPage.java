@@ -21,7 +21,7 @@ public class LoginPage {
 
     @FindBy(xpath = "//button[@type='submit']")
     WebElement logInButton;
-    @FindBy(css = "#alert")
+    @FindBy(css = ".alert-danger")
     WebElement errorMessage;
 
 

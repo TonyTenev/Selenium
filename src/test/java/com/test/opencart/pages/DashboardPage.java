@@ -14,13 +14,16 @@ public class DashboardPage {
     WebElement closePopUp;
     @FindBy(xpath = "//a[@href='#collapse-5']")
     WebElement customersCollapseButton;
-    @FindBy(xpath = "//ul[@id='collapse-5']//li//a[contains(text(), 'Customers')]")
+    @FindBy(xpath = "//a[.='Customers']")
     WebElement customerButton;
 
 
     public void navigateToCustomerPage() {
-        closePopUp.click();
         customersCollapseButton.click();
         customerButton.click();
+    }
+
+    public void closePopUp(){
+        closePopUp.click();
     }
 }

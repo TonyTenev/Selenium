@@ -35,7 +35,7 @@ public class CostumersPage {
     @FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
     WebElement alertMessage;
 
-    public void addCostumer(String inputFirstName, String inputLastName, String inputEmail, String inputPass, String inputPassConf) {
+    public void addCostumer(String inputFirstName, String inputLastName, String inputEmail, String inputPass) {
         addButton.click();
         firstName.sendKeys(inputFirstName);
         lastName.sendKeys(inputLastName);

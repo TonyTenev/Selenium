@@ -16,6 +16,6 @@ public class LoginPageTest extends OpenCartTestBase {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("demo", "asdf");
         Thread.sleep(2000);
-        loginPage.negativeTest("No match for Username and/or Password.", "rgba(0, 0, 0, 0)");
+        loginPage.negativeTest("No match for Username and/or Password.", "rgba(249, 220, 216, 1)");
     }
 }
