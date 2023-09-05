@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Bank Regression">
+    <test name="Bank Regression Test">
+        <classes>
+            <class name="com.test.bank.tests.BankCostumerTest"> </class>
+            <class name="com.test.bank.tests.BankManagerTest"> </class>
+            <class name="com.test.bank.tests.BankLoginTest"></class>
+        </classes>
+    </test>
+</suite>

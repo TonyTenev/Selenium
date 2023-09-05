@@ -1,0 +1,11 @@
+<!--Now you are learning how to create regression Suite here-->
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!-- This doctype is telling your system this file will be suite type(regression, smoke)-->
+<suite name="Regression Suite">
+    <test name="Blaze Tests">
+        <classes>
+            <class name="com.test.blaze.test.MackBookPro"> </class>
+        </classes>
+    </test>
+</suite>
+
