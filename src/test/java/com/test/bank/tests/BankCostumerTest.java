@@ -6,13 +6,21 @@ import com.test.bank.pages.BankManagerPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 public class BankCostumerTest extends BankTestBase {
+    @Parameters({"name", "lastName", "zipCode", "expectedMessage", "customerName", "currency",
+    "expectedAccountMessage", "expectedHeaderLoginIn", "defaultBalance", "depositAmount", "expectedDepositMessage",
+    "expectedBalance", "withdrawalAmount", "expectedTransactionMessage"})
     @Test
-    public void CostumerLogInTest() throws InterruptedException {
+    public void CostumerLogInTest(String firstName, String lastName, String zipCode,
+                                  String expectedMessage, String customerName, String currency,
+                                  String expectedAccountMessage, String expectedHeader, String defaultBalance,
+                                  String depositAmount, String expectedDepositMessage, String expectedBalance,
+                                  String withdrawalAmount, String expectedTransactionMessage) throws InterruptedException {
 //        WebDriverManager.chromedriver().setup();
 //        WebDriver driver = new ChromeDriver();
 //        driver.manage().window().maximize();
@@ -21,18 +29,16 @@ public class BankCostumerTest extends BankTestBase {
         BankLoginPage bankLoginPage = new BankLoginPage(driver);
         bankLoginPage.clickManagerButton();
         BankManagerPage bankManagerPage = new BankManagerPage(driver);
-        bankManagerPage.costumerInformation("Tony", "Tenev", "60656", driver,
-                "Customer added successfully with customer id ");
-        bankManagerPage.OpenAccountInformation(driver, "Tony Tenev", "Dollar",
-                "Account created successfully with account Number");
-        bankManagerPage.CostumersData("Tony", "Tenev", "60656");
+        bankManagerPage.costumerInformation(firstName, lastName, zipCode, driver, expectedMessage);
+        bankManagerPage.OpenAccountInformation(driver, customerName, currency, expectedAccountMessage);
+        bankManagerPage.CostumersData(firstName, lastName, zipCode);
         bankManagerPage.ClickHomeButton();
         bankLoginPage.clickCustomerLogIn();
         BankCostumerLogIn bankCostumerLogIn = new BankCostumerLogIn(driver);
-        bankCostumerLogIn.selectName("Tony Tenev", "text");
-        bankCostumerLogIn.accountGeneralInfo("Welcome Tony Tenev !!", "1111", "0", "Dollar");
-        bankCostumerLogIn.depositTest("500", "Deposit Successful", "500");
-        bankCostumerLogIn.withdrawTest("300", "Transaction successful");
+        bankCostumerLogIn.selectName(customerName, "text");
+        bankCostumerLogIn.accountGeneralInfo(expectedHeader, "1111", defaultBalance, currency);
+        bankCostumerLogIn.depositTest(depositAmount, expectedDepositMessage, expectedBalance);
+        bankCostumerLogIn.withdrawTest(withdrawalAmount, expectedTransactionMessage);
         bankCostumerLogIn.transactionProcess();
 
 

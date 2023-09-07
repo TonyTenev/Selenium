@@ -2,8 +2,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Smoke Suite">
     <test name="Bank Login Functionality Test">
+        <parameter name="ExpectedHeader" value="XYZ Bank"> </parameter>
         <classes>
-            <class name="com.test.bank.tests.BankLoginTest"></class>
+            <class name="com.test.bank.tests.BankLoginTest"> </class>
         </classes>
     </test>
 </suite>

@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Spruce regression">
+    <test name="Fish test">
+        <parameter name="recipe" value="fish for dinner"> </parameter>
+        <parameter name="expectedHeader" value="6-Ingredient Roasted Salmon Fillets"> </parameter>
+        <classes>
+            <class name="com.test.spruce.test.FishTest"> </class>
+        </classes>
+    </test>
+</suite>

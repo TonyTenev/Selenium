@@ -85,6 +85,7 @@ public class BankCostumerLogIn {
     }
     public void transactionProcess() throws InterruptedException {
         int expectedBalance = Integer.parseInt(BrowserUtils.getText(balance));
+        Thread.sleep(1000);
         transactionsButton.click();
         Thread.sleep(2000);
         int actualBalance = Integer.parseInt(BrowserUtils.getText(creditAmount))-

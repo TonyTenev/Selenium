@@ -5,13 +5,15 @@ import com.test.bank.pages.BankManagerPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 public class BankManagerTest extends BankTestBase {
+    @Parameters({"name", "lastName", "zipCode", "expectedMessage"})
     @Test
-    public void validateAddCostumerFunctionality() {
+    public void validateAddCostumerFunctionality(String name, String lastName, String zipCode, String expectedMessage) {
 //        WebDriverManager.chromedriver().setup();
 //        WebDriver driver = new ChromeDriver();
 //        driver.manage().window().maximize();
@@ -20,8 +22,7 @@ public class BankManagerTest extends BankTestBase {
         BankLoginPage bankLoginPage = new BankLoginPage(driver);
         bankLoginPage.clickManagerButton();
         BankManagerPage bankManagerPage = new BankManagerPage(driver);
-        bankManagerPage.costumerInformation("Tony", "Tenev", "60656", driver,
-                "Customer added successfully with customer id ");
+        bankManagerPage.costumerInformation(name, lastName, zipCode, driver, expectedMessage);
     }
 
     @Test

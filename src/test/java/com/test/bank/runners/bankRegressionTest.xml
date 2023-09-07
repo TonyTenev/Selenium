@@ -1,10 +1,25 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Bank Regression">
     <test name="Bank Regression Test">
+        <parameter name="name" value="Tony"> </parameter>
+        <parameter name="lastName" value="Tenev"> </parameter>
+        <parameter name="zipCode" value="60656"> </parameter>
+        <parameter name="ExpectedHeader" value="XYZ Bank"> </parameter>
+        <parameter name="expectedMessage" value="Customer added successfully with customer id"> </parameter>
+        <parameter name="customerName" value="Tony Tenev"> </parameter>
+        <parameter name="currency" value="Dollar"> </parameter>
+        <parameter name="expectedAccountMessage" value="Account created successfully with account Number"> </parameter>
+        <parameter name="expectedHeaderLoginIn" value="Welcome Tony Tenev !!"> </parameter>
+        <parameter name="defaultBalance" value="0"> </parameter>
+        <parameter name="depositAmount" value="500"> </parameter>
+        <parameter name="expectedDepositMessage" value="Deposit Successful"> </parameter>
+        <parameter name="expectedBalance" value="500"> </parameter>
+        <parameter name="withdrawalAmount" value="300"> </parameter>
+        <parameter name="expectedTransactionMessage" value="Transaction successful"> </parameter>
         <classes>
             <class name="com.test.bank.tests.BankCostumerTest"> </class>
             <class name="com.test.bank.tests.BankManagerTest"> </class>
-            <class name="com.test.bank.tests.BankLoginTest"></class>
+            <class name="com.test.bank.tests.BankLoginTest"> </class>
         </classes>
     </test>
 </suite>
