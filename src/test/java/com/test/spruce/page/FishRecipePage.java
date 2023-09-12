@@ -24,7 +24,8 @@ public class FishRecipePage {
     public void pickRecipe(WebDriver driver, String expectedHeader) throws InterruptedException {
         Thread.sleep(2000);
         BrowserUtils.clickWithJS(driver, fourStarsRadio);
-        BrowserUtils.clickWithJS(driver, editorsChoice);
+        if (!editorsChoice.isSelected()){
+            BrowserUtils.clickWithJS(driver, editorsChoice);}
         Thread.sleep(2000);
         Assert.assertEquals(BrowserUtils.getText(header),expectedHeader );
     }

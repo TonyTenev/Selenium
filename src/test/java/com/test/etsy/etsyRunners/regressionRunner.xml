@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Regression Runner">
+    <test name="Etsy Test">
+        <parameter name="itemSearched" value="iphone 13 case"> </parameter>
+        <parameter name="phoneBrand" value="iphone"> </parameter>
+        <parameter name="phoneModel" value="13"> </parameter>
+        <parameter name="accessory" value="case"> </parameter>
+        <classes>
+            <class name="com.test.etsy.etsyTest.SearchIphoneCase"> </class>
+        </classes>
+    </test>
+</suite>
